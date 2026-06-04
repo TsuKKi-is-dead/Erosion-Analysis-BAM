@@ -1,0 +1,12 @@
+Metric,Value,Notes
+Total transects analysed,80,N-S transects at 250m spacing
+Mean LRR (m/yr),-0.63,Negative = net erosion
+Max erosion rate (m/yr),-3.01,"Southern section, Gopalpur"
+Max accretion rate (m/yr),1.90,Northern section
+% coast under erosion,63.7%,LRR < 0 m/yr
+% coast critical/high risk,40.0%,Composite risk score >= 0.55
+NDVI change 2019-2024,-0.130,Declining vegetation cover
+BSI change 2019-2024,0.130,Increasing bare sediment
+Overall classification accuracy,89.2%,vs GPS / Google Earth ref.
+Kappa coefficient,0.837,> 0.80 = strong agreement
+Strongest erosion driver (r),Storm_Days,"Pearson r, absolute value"

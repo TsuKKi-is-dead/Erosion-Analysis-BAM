@@ -1,0 +1,17 @@
+Metric,Value,Section in paper
+Total transects analysed,783,Methods / Study design
+Mean LRR (m/yr),10.70 m/yr,Results 3.1
+Max erosion rate EPR (m/yr),-42.91 m/yr,Results 3.1
+Max accretion rate EPR (m/yr),66.78 m/yr,Results 3.1
+% coastline under net erosion,18.4%,Results 3.1
+% coastline Critical or High risk,0.6%,Results 3.4
+NDVI change 2019–2024,-0.036,Results 3.2
+BSI change 2019–2024,-0.085,Results 3.2
+NDVI trend significance,Significant (p<0.05),Results 3.2
+BSI trend significance,Significant (p<0.05),Results 3.2
+Overall classification accuracy (OA),81.7%,Results 3.3 / Validation
+Cohen's Kappa coefficient (κ),0.723,Results 3.3 / Validation
+Intertidal Producer's Accuracy (hardest class),74.2%,Results 3.3
+Strongest erosion driver,Sig_Wave_Height_m,Results 3.5 / Discussion
+Correlation with wave height (r),-0.617,Results 3.5
+Correlation with storm days (r),+0.232,Results 3.5

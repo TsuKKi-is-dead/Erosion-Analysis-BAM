@@ -1,0 +1,5 @@
+Variable,r,p_value,Significant,Interpretation
+Rainfall_mm,-0.3493,0.26573,False,Weak relationship
+Sig_Wave_Height_m,-0.6166,0.03273,True,More intense → more erosion
+Storm_Days,0.2318,0.46854,False,Weak relationship
+Cyclone_Intensity,0.1206,0.70883,False,Weak relationship
