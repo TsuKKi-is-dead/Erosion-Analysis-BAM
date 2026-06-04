@@ -80,14 +80,16 @@ Erosion-Analysis-BAM/
 │   ├── summary_results_table.csv              # Master results summary for paper
 │   └── validation_points.csv                 # 180 points with MNDWI + True/Predicted class
 │
-├── brahmapur_coastal_analysis.py              # Standalone Python version of the pipeline
-├── MNDWI.py                                   # MNDWI classification and accuracy script
-├── EPR.py                                     # Yearly EPR computation script
-├── cyclone.py                                 # Climate data assembly script
-├── rain.py                                    # ERA5 rainfall download script
-├── waves.py                                   # ERA5 wave height download script
-├── split.py                                   # Utility: lat/lon extraction from .geo column
-│
+├── src/                                       # Standalone Python version of the pipeline
+|    |
+├   |── MNDWI.py                                   # MNDWI classification and accuracy script
+├   |── EPR.py                                     # Yearly EPR computation script
+├   |── cyclone.py                                 # Climate data assembly script
+├   |── rain.py                                    # ERA5 rainfall download script
+├   |── waves.py                                   # ERA5 wave height download script
+├   |── split.py                                   # Utility: lat/lon extraction from .geo column
+|
+│---brahmapur_coastal_erosion_analysis.ipynb
 ├── requirements.txt                           # Python dependencies with versions
 └── README.md                                  # This file
 ```
