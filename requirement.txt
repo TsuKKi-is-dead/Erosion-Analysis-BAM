@@ -1,0 +1,43 @@
+# ============================================================
+# Brahmapur Coastal Erosion Analysis — Python Dependencies
+# Study period: 2013–2024 | Ganjam, Odisha, India
+# Python version: 3.13
+# ============================================================
+
+# ── Core scientific computing ────────────────────────────────
+numpy==2.2.3
+pandas==2.2.3
+scipy==1.15.2
+
+# ── Geospatial analysis ──────────────────────────────────────
+geopandas==1.0.1
+shapely==2.0.7
+pyproj==3.7.1
+fiona==1.10.1
+rasterio==1.4.3
+
+# ── Machine learning / statistics ────────────────────────────
+scikit-learn==1.6.1
+
+# ── Visualisation ────────────────────────────────────────────
+matplotlib==3.10.1
+seaborn==0.13.2
+
+# ── Jupyter notebook ─────────────────────────────────────────
+jupyter==1.1.1
+notebook==7.3.2
+ipykernel==6.29.5
+
+# ── HTTP / data download (ERA5 via Open-Meteo) ───────────────
+requests==2.32.3
+
+# ── Utilities ────────────────────────────────────────────────
+python-dateutil==2.9.0
+pytz==2025.1
+tqdm==4.67.1
+
+# ── Google Earth Engine SDK (optional — for GEE scripts) ─────
+# Uncomment if running the GEE Python API portions:
+# earthengine-api==1.5.10
+# google-auth==2.38.0
+# google-auth-httplib2==0.2.0

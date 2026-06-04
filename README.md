@@ -1,4 +1,5 @@
 # Brahmapur Coastline Erosion Analysis (2013–2024)
+
 ### A Multi-Temporal Remote Sensing Study of the Ganjam Coast, Odisha, India
 
 [![Python](https://img.shields.io/badge/Python-3.13-blue)](https://www.python.org/)
@@ -17,13 +18,13 @@ The analysis integrates satellite remote sensing, digital shoreline analysis, sp
 
 ## Study Area
 
-| Parameter | Value |
-|-----------|-------|
-| Location | Brahmapur (Berhampur), Ganjam, Odisha, India |
-| AOI Bounding Box | [84.68, 19.05, 84.92, 19.42] |
-| Coastline Length | ~37 km |
-| Study Period | 2013–2024 (12 years) |
-| Focal Feature | Gopalpur port and downdrift accretion zone |
+| Parameter        | Value                                        |
+| ---------------- | -------------------------------------------- |
+| Location         | Brahmapur (Berhampur), Ganjam, Odisha, India |
+| AOI Bounding Box | [84.68, 19.05, 84.92, 19.42]                 |
+| Coastline Length | ~37 km                                       |
+| Study Period     | 2013–2024 (12 years)                         |
+| Focal Feature    | Gopalpur port and downdrift accretion zone   |
 
 ---
 
@@ -96,27 +97,32 @@ Erosion-Analysis-BAM/
 ## Modules
 
 ### Module 1 — Shoreline Change Analysis (Python DSAS)
+
 - Extracts annual shorelines from GEE (Landsat 8: 2013–2016, Sentinel-2: 2017–2024)
 - Applies JRC permanent water mask; Nov–Feb dry season composites
 - Computes EPR, NSM, LRR, R², SCE across 819 transects (250 m spacing, UTM 32645, 2013 baseline)
 
 ### Module 2 — Spectral Index Time Series
+
 - Computes NDWI, MNDWI, NDVI, BSI annually for the AOI
 - Linear regression + Mann-Kendall trend test
 - BSI significant (p = 0.034); 2023 flagged as Cyclone Michaung anomaly
 
 ### Module 3 — Land Cover Validation
+
 - 180 stratified random points (60 per class: Water / Intertidal / Land)
 - Ground truth manually verified in Google Earth Pro (Dec 2020 imagery)
 - Real MNDWI pixel values extracted from GEE Sentinel-2 composite
 - **Overall Accuracy: 81.7%, Cohen's Kappa: 0.723**
 
 ### Module 4 — Erosion Hotspot Classification
+
 - Composite risk score from LRR, NDVI decline, BSI exposure
 - Four risk levels: Low / Moderate / High / Critical
 - 2 Critical transects (~19.107°N and ~19.133°N); 3 High risk transects
 
 ### Module 5 — Climate Driver Correlation
+
 - Annual ERA5 rainfall and wind-derived wave height (Open-Meteo API)
 - RSMC cyclone records: Phailin (2013), Titli (2018), Amphan (2020), Michaung (2023)
 - Pearson correlation of climate variables vs mean shoreline change rate
@@ -126,28 +132,30 @@ Erosion-Analysis-BAM/
 
 ## Data Sources
 
-| Dataset | Source | Period | Resolution |
-|---------|--------|--------|------------|
-| Landsat 8 SR | USGS via Google Earth Engine | 2013–2016 | 30 m |
-| Sentinel-2 SR Harmonized | ESA via Google Earth Engine | 2017–2024 | 10 m |
-| JRC Global Surface Water | EC JRC via GEE | Permanent mask | 30 m |
-| Annual Rainfall | ERA5 via Open-Meteo archive API | 2013–2024 | ~25 km |
-| Significant Wave Height | ERA5/Open-Meteo marine API | 2021–2024 | ~25 km |
-| Wind Speed (wave proxy) | ERA5 via Open-Meteo | 2013–2020 | ~25 km |
-| Cyclone Records | RSMC New Delhi / IMD | 2013–2024 | Event-based |
-| Ground Truth | Google Earth Pro (Dec 2020 imagery) | 2020 | Visual |
+| Dataset                  | Source                              | Period         | Resolution  |
+| ------------------------ | ----------------------------------- | -------------- | ----------- |
+| Landsat 8 SR             | USGS via Google Earth Engine        | 2013–2016      | 30 m        |
+| Sentinel-2 SR Harmonized | ESA via Google Earth Engine         | 2017–2024      | 10 m        |
+| JRC Global Surface Water | EC JRC via GEE                      | Permanent mask | 30 m        |
+| Annual Rainfall          | ERA5 via Open-Meteo archive API     | 2013–2024      | ~25 km      |
+| Significant Wave Height  | ERA5/Open-Meteo marine API          | 2021–2024      | ~25 km      |
+| Wind Speed (wave proxy)  | ERA5 via Open-Meteo                 | 2013–2020      | ~25 km      |
+| Cyclone Records          | RSMC New Delhi / IMD                | 2013–2024      | Event-based |
+| Ground Truth             | Google Earth Pro (Dec 2020 imagery) | 2020           | Visual      |
 
 ---
 
 ## Setup and Usage
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/TsuKKi-is-dead/Erosion-Analysis-BAM.git
 cd Erosion-Analysis-BAM
 ```
 
 ### 2. Create a virtual environment
+
 ```bash
 python -m venv venv
 source venv/bin/activate        # macOS/Linux
@@ -155,37 +163,41 @@ venv\Scripts\activate           # Windows
 ```
 
 ### 3. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Run the notebook
+
 ```bash
 jupyter notebook brahmapur_coastal_erosion_analysis.ipynb
 ```
+
 Run all cells in order. Modules 1–5 are sequential — each builds on the previous output.
 
 ### Google Earth Engine Access
+
 Modules 1, 2, and 3 (ground truth extraction) require a GEE account. Register free at [earthengine.google.com](https://earthengine.google.com). The Python analysis (Modules 3 accuracy onwards, 4, 5) runs entirely locally without GEE.
 
 ---
 
 ## Results Summary
 
-| Metric | Value |
-|--------|-------|
-| Total transects analysed | 783 |
-| Mean LRR | +10.70 m/yr |
-| Max erosion rate | −42.91 m/yr |
-| Max accretion rate | +66.78 m/yr |
-| % coastline under net erosion | 18.4% |
-| Critical + High risk transects | 0.6% of coast |
-| NDVI change 2019–2024 | −0.036 |
-| BSI trend significance | p = 0.034 ✅ |
-| Classification accuracy (OA) | 81.7% |
-| Cohen's Kappa (κ) | 0.723 |
-| Strongest erosion driver | Significant wave height |
-| Wave height correlation | r = −0.617, p = 0.033 ✅ |
+| Metric                         | Value                    |
+| ------------------------------ | ------------------------ |
+| Total transects analysed       | 783                      |
+| Mean LRR                       | +10.70 m/yr              |
+| Max erosion rate               | −42.91 m/yr              |
+| Max accretion rate             | +66.78 m/yr              |
+| % coastline under net erosion  | 18.4%                    |
+| Critical + High risk transects | 0.6% of coast            |
+| NDVI change 2019–2024          | −0.036                   |
+| BSI trend significance         | p = 0.034 ✅             |
+| Classification accuracy (OA)   | 81.7%                    |
+| Cohen's Kappa (κ)              | 0.723                    |
+| Strongest erosion driver       | Significant wave height  |
+| Wave height correlation        | r = −0.617, p = 0.033 ✅ |
 
 ---
 
@@ -194,8 +206,8 @@ Modules 1, 2, and 3 (ground truth extraction) require a GEE account. Register fr
 If you use this code or data in your research, please cite:
 
 ```
-[Author Name(s)], [Year]. Multi-temporal shoreline change and erosion hotspot 
-analysis of the Brahmapur coastline, Ganjam, Odisha (2013–2024). 
+[Author Name(s)], [Year]. Multi-temporal shoreline change and erosion hotspot
+analysis of the Brahmapur coastline, Ganjam, Odisha (2013–2024).
 GitHub: https://github.com/TsuKKi-is-dead/Erosion-Analysis-BAM
 ```
 
