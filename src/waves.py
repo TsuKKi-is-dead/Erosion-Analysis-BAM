@@ -28,5 +28,5 @@ annual_wind = seasonal.groupby("Year")["Wind_ms"].mean().reset_index()
 annual_wind["Sig_Wave_Height_m"] = (0.0248 * annual_wind["Wind_ms"]**1.5).round(3)
 
 print(annual_wind[["Year","Wind_ms","Sig_Wave_Height_m"]])
-annual_wind.to_csv("/Users/tsukki/Downloads/files/GEE_Brahmapur/annual_waves.csv", index=False)
+annual_wind.to_csv("/Users/tsukki/Downloads/GEE_Brahmapur/annual_waves.csv", index=False)
 print("Saved")

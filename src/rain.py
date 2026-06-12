@@ -39,5 +39,5 @@ annual.columns = ["Year", "Rainfall_mm"]
 annual["Rainfall_mm"] = annual["Rainfall_mm"].round(1)
 
 print(annual)
-annual.to_csv("/Users/tsukki/Downloads/files/GEE_Brahmapur/annual_rainfall.csv", index=False)
+annual.to_csv("/Users/tsukki/Downloads/GEE_Brahmapur/annual_rainfall.csv", index=False)
 print("Saved")

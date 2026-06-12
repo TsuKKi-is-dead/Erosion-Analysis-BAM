@@ -1,0 +1,20 @@
+Metric,Value,Section in paper
+Total transects analysed,119,Methods
+Mean LRR (m/yr),-0.222 m/yr,Results 3.1
+Mean EPR (m/yr),-0.082 m/yr,Results 3.1
+Max erosion rate LRR (m/yr),-7.867 m/yr,Results 3.1
+Max accretion rate LRR (m/yr),7.832 m/yr,Results 3.1
+% coastline under net erosion (LRR<0),43.7%,Results 3.1
+Mean Net Shoreline Movement 2013–2024 (m),-0.9 m,Results 3.1
+Worst single-year erosion period,2022→2023,Results 3.2
+Mean change in worst year (m),-7.624 m,Results 3.2
+Best single-year accretion period,2017→2018,Results 3.2
+Mean change in best year (m),6.126 m,Results 3.2
+No. of years with >50% coast eroding,0,Results 3.2
+NDVI change 2013–2024,0.035,Results 3.3
+BSI change 2013–2024,-0.155,Results 3.3
+Overall classification accuracy (OA),93.9%,Validation
+Cohen's Kappa coefficient (κ),0.908,Validation
+Strongest erosion driver,Rainfall_mm,Discussion
+Correlation with wave height (r),-0.108,Results 3.4
+Correlation with storm days (r),-0.054,Results 3.4

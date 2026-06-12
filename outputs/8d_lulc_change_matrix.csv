@@ -1,0 +1,10 @@
+From_Class,To_Class,Area_km2,Pixels,Transition
+Land,Land,253.2339,2532339,Unchanged
+Land,Intertidal,1.7528,17528,Changed
+Land,Water,0.0569,569,Changed
+Intertidal,Land,5.2176,52176,Changed
+Intertidal,Intertidal,5.4693,54693,Unchanged
+Intertidal,Water,0.4557,4557,Changed
+Water,Land,0.6165,6165,Changed
+Water,Intertidal,1.7032,17032,Changed
+Water,Water,184.2265,1842265,Unchanged
